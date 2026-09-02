@@ -4,9 +4,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Anna Bot</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>First test</h1>
-    <p>2nd change</p>
+    <main>
+        <section>
+            <h1>Hello, ask me anything</h1>
+            <form>
+                <label for="ask">Your message:</label>
+                <textarea 
+                type="text" 
+                id="ask" 
+                name="ask" 
+                placeholder="Type your message here..."
+                required></textarea>
+                <button type="submit">Send</button>
+            </form>
+            <div class="textArea">Chat answer will come here later</div>
+        </section>
+    </main>
 </body>
 </html>

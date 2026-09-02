@@ -1,0 +1,14 @@
+form{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    width: 24%;
+}
+.textArea{
+    width: 24%;
+    height: 100px;
+    margin-block: 16px;
+    border: 1px solid black;
+    border-radius: 5px;
+    resize: vertical;
+}
