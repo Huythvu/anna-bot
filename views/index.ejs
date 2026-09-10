@@ -15,13 +15,10 @@
             <p><%= message.text %></p>
           </article>
           <% } %>
-
-        <!-- <div class="answer">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Laborum optio beatae magnam vel culpa ipsum provident perferendis aut vero itaque consequuntur, sit minus tenetur dignissimos adipisci, necessitatibus facere architecto exercitationem.</div> -->
-
         <% if (error) { %>
           <p role ="alert"><%= error %></p>
         <% } %>
-        
+        <div class="formContainer">
         <form method="POST" action="/ask">
           <label for="question">Your question here:</label>
           <div class="inputContainer">
@@ -34,6 +31,12 @@
             <button type="submit">Send</button>
           </div>
         </form>
+        <ul>
+          <li>Navn: <%= topicStats.navn %></li>
+          <li>Bosted: <%= topicStats.bosted %></li>
+          <li>Fritid: <%= topicStats.fritid %></li>
+        </ul>          
+        </div>
       </section>
     </main>
   </body>

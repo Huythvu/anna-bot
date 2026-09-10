@@ -10,7 +10,7 @@ body {
 
 main {
   margin: auto;
-  max-width: 60%;
+  max-width: 40%;
 }
 section{
   display: flex;
@@ -45,9 +45,17 @@ h1 {
   margin-left: 0;
 }
 
+.formContainer{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 3rem;
+}
+
 form {
   display: flex;
   flex-direction: column;
+  flex-grow: 1;
   margin-top: auto;
   margin-bottom: 2rem;
 }
