@@ -43,21 +43,21 @@ h1 {
   max-width: 60%;
   margin-right: auto;
   margin-left: 0;
-}
+} 
 
 .formContainer{
   display: flex;
   justify-content: space-between;
   align-items: center;
   gap: 3rem;
-  margin-top: auto;
-  margin-bottom: 2rem;
 }
 
 form {
   display: flex;
   flex-direction: column;
   flex-grow: 1;
+  margin-top: auto;
+  margin-bottom: 2rem;
 }
 .inputContainer {
   position: relative;

@@ -1,8 +1,10 @@
 import express from "express";
-import fs from "node:fs/promises"
 
 const app = express();
 const port = 3000;
+
+const messages = [];
+
 const answers = [
   {
     category: "navn",
@@ -26,25 +28,6 @@ const topicStats = {
   bosted: 0,
   hobby: 0,
 };
-
-async function loadMessages(){
-  // TODO Læs data/messages.json med fs.readFile() ("utf8")
-  const data = await fs.readFile("./data/messages.json", "utf8")
-  // TODO Parse JSON teksten til et array og returnér det.
-  const messages = JSON.parse(data);
-  return messages
-}
-
-async function saveMessages(messages){
-  //TODO Omdan messages til formateret JSON-tekst med JSON.stringify
-  const messageJson = JSON.stringify(messages, null, 2);
-  //TODO Skriv teksten til data/messages.json med fs.writeFile().
-  await fs.writeFile("./data/messages.json", messageJson);
-}
-
-function matchesKeywords(keywords, normalizedQuestion){
-  const matches = keywords
-}
 
 function countMatches(keywords, normalizedQuestion) {
   const matches = keywords.filter((keyword) => {
@@ -101,23 +84,17 @@ app.use(express.static("public"));
 app.set("view engine", "ejs");
 app.use(express.urlencoded({ extended: true }));
 
-app.get("/", async (request, response) => {
-  const messages = await loadMessages();
-
+app.get("/", (request, response) => {
   response.render("index", { messages, error: "", topicStats });
 });
 
-app.post("/ask", async (request, response) => {
-  const messages = await loadMessages();
-
-  const question = request.body.question;
-  console.log(question)
+app.post("/ask", (request, response) => {
+  const question = request.body.question.trim();
   let error = "";
   if (!question) {
     error = "Skriv et spørgsmål, før du sender.";
   } else {
     messages.push({ type: "question", text: question });
-    console.log(messages)
 
     const result = findBestAnswer(question);
     messages.push({ type: "answer", text: result.answer });
@@ -126,9 +103,7 @@ app.post("/ask", async (request, response) => {
     }
     console.log(topicStats);
   }
-
-  await saveMessages(messages)
-  response.render("index", { messages, error, topicStats });
+  response.render("index", { messages, error, topicStats});
 });
 
 //* app.listen i bunden for best practice

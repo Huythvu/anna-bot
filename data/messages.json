@@ -1,0 +1,36 @@
+[
+  {
+    "type": "question",
+    "text": "hej"
+  },
+  {
+    "type": "answer",
+    "text": "123Det kender jeg ikke svaret på endnu BestAnswerFunction123"
+  },
+  {
+    "type": "question",
+    "text": "test"
+  },
+  {
+    "type": "answer",
+    "text": "123Det kender jeg ikke svaret på endnu BestAnswerFunction123"
+  },
+  {
+    "type": "question",
+    "text": "hej"
+  },
+  {
+    "type": "answer",
+    "text": "123Det kender jeg ikke svaret på endnu BestAnswerFunction123"
+  },
+  {
+    "type": "question",
+    "text": "bor"
+  },
+  {
+    "type": "answer",
+    "text": [
+      "Jeg bor i Aarhus"
+    ]
+  }
+]
