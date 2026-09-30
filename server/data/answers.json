@@ -1,0 +1,45 @@
+[
+  {
+    "category": "hilsen",
+    "keywords": [
+      "hej",
+      "hallo",
+      "hello",
+      "hey"
+    ],
+    "answer": "Hej! Hvad vil du gerne vide om mig?"
+  },
+  {
+    "category": "navn",
+    "keywords": [
+      "navn",
+      "hedder",
+      "hvem er du"
+    ],
+    "answer": [
+      "Jeg hedder Huy. Hvad vil du ellers vide om?"
+    ]
+  },
+  {
+    "category": "bosted",
+    "keywords": [
+      "bor",
+      "by",
+      "fra"
+    ],
+    "answer": [
+      "Jeg bor i Aarhus"
+    ]
+  },
+  {
+    "category": "hobby",
+    "keywords": [
+      "fritid",
+      "hobby",
+      "kan lide"
+    ],
+    "answer": [
+      "I min fritid kan jeg godt lide at læse og gå ture"
+    ]
+  }
+]

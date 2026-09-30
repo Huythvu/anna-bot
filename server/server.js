@@ -38,9 +38,19 @@ async function saveMessages(messages) {
   await fs.writeFile("./data/messages.json", messageJson);
 }
 
-function matchesKeywords(keywords, normalizedQuestion) {
-  const matches = keywords;
+async function loadAnswers() {
+ const data = await fs.readFile("./data/answers.json", "utf8");
+  return JSON.parse(data);
 }
+
+async function saveAnswers(answers) {
+  const json = JSON.stringify(answers, null, 2);
+  await fs.writeFile("./data/answers.json", json);
+}
+
+// function matchesKeywords(keywords, normalizedQuestion) {
+//   const matches = keywords;
+// }
 
 function countMatches(keywords, normalizedQuestion) {
   const matches = keywords.filter((keyword) => {
@@ -74,59 +84,8 @@ function findBestAnswer(question) {
   };
 }
 
-console.log(findBestAnswer("Hvad hedder du?"));
-console.log(findBestAnswer("Kan du bage en kage?"));
 
-// function findAnswer(question) {
-//   const normalizedQuestion = question.toLowerCase();
-
-//   for (const answerGroup of answers) {
-//     const hasMatch = answerGroup.keywords.some((keyword) =>
-//       normalizedQuestion.includes(keyword),
-//     );
-
-//     if (hasMatch) {
-//       return answerGroup.answer;
-//     }
-//   }
-//   return "Det kender jeg ikke svaret på endnu";
-// }
-// // console.log(findAnswer("Hvad hedder du?"));
-
-// app.use(express.static("public"));
-// app.set("view engine", "ejs");
-// app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
-
-// app.get("/", async (request, response) => {
-//   const messages = await loadMessages();
-
-//   response.render("index", { messages, error: "", topicStats });
-// });
-
-// app.post("/ask", async (request, response) => {
-//   const messages = await loadMessages();
-
-//   const question = request.body.question;
-//   console.log(question)
-//   let error = "";
-//   if (!question) {
-//     error = "Skriv et spørgsmål, før du sender.";
-//   } else {
-//     messages.push({ type: "question", text: question });
-//     console.log(messages)
-
-//     const result = findBestAnswer(question);
-//     messages.push({ type: "answer", text: result.answer });
-//     if (result.category) {
-//       topicStats[result.category] += 1;
-//     }
-//     console.log(topicStats);
-//   }
-
-//   await saveMessages(messages)
-//   response.render("index", { messages, error, topicStats });
-// });
 
 app.get("/messages", async (request, response) => {
   const messages = await loadMessages();
@@ -134,13 +93,19 @@ app.get("/messages", async (request, response) => {
   response.json(messages);
 });
 
+app.get("/answers", async (request, response) => {
+  const answers = await loadAnswers();
+
+  response.json(answers);
+});
+
 app.post("/messages", async (request, response) => {
   const messages = await loadMessages();
   const question = request.body.question;
-  console.log(request.body)
+  console.log(request.body);
 
   if (!question) {
-    response.json({ error: "Skriv et spørgsmål, før du sender." });
+    response.json({ error: "Skriv et spørgsmål" });
     return;
   }
 
@@ -164,8 +129,42 @@ app.post("/messages", async (request, response) => {
   response.json({ question: message, answer: answerMessage });
 });
 
+app.post("/answers", async (request, response) => {
+  const answers = await loadAnswers();
+  const newAnswerRule = {
+    category: request.body.category,
+    keywords: request.body.keywords,
+    answer: request.body.answer
+  };
+
+  answers.push(newAnswerRule);
+  await saveAnswers(answers);
+
+  response.json(newAnswerRule);
+});
+
+app.put("/answers/:category", async (request, response) => {
+  const answers = await loadAnswers();
+  const answerRule = answers.find((a) => a.category === request.params.category);
+
+  answerRule.keywords = request.body.keywords;
+  answerRule.answer = request.body.answer;
+  await saveAnswers(answers);
+
+  response.json(answerRule);
+});
+
 app.delete("/messages", async (request, response) => {
   await saveMessages([]);
+
+  response.send();
+});
+
+app.delete("/answers/:category", async (request, response) => {
+  const answers = await loadAnswers();
+  const updatedAnswers = answers.filter((a) => a.category !== request.params.category);
+
+  await saveAnswers(updatedAnswers);
 
   response.send();
 });
