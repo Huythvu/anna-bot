@@ -1,42 +1,12 @@
 [
   {
     "type": "question",
-    "text": "Hvad er din livret?",
-    "createdAt": "2026-09-30T03:38:10.153Z"
+    "text": "hej",
+    "createdAt": "2026-09-30T04:23:58.682Z"
   },
   {
     "type": "answer",
-    "text": "Min livret er lasagne.",
-    "createdAt": "2026-09-30T03:38:10.154Z"
-  },
-  {
-    "type": "question",
-    "text": "Hvad er din livret?",
-    "createdAt": "2026-09-30T03:38:11.131Z"
-  },
-  {
-    "type": "answer",
-    "text": "Min livret er lasagne.",
-    "createdAt": "2026-09-30T03:38:11.131Z"
-  },
-  {
-    "type": "question",
-    "text": "Hvad er din livret?",
-    "createdAt": "2026-09-30T03:38:11.533Z"
-  },
-  {
-    "type": "answer",
-    "text": "Min livret er lasagne.",
-    "createdAt": "2026-09-30T03:38:11.533Z"
-  },
-  {
-    "type": "question",
-    "text": "Hvad er din livret?",
-    "createdAt": "2026-09-30T03:38:11.823Z"
-  },
-  {
-    "type": "answer",
-    "text": "Min livret er lasagne.",
-    "createdAt": "2026-09-30T03:38:11.823Z"
+    "text": "Hej! Jeg er Huys AMAbot. Spørg mig om hvad som helst, fx hvad jeg studerer, hvad jeg spiller, eller hvad min livret er.",
+    "createdAt": "2026-09-30T04:23:58.682Z"
   }
 ]

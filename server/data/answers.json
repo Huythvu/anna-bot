@@ -1,54 +1,97 @@
 [
   {
-    "category": "hilsen",
-    "keywords": [
-      "hej",
-      "hallo",
-      "hello",
-      "hey"
-    ],
-    "answer": "Hej! Hvad vil du gerne vide om mig?"
-  },
-  {
     "category": "navn",
-    "keywords": [
-      "navn",
-      "hedder",
-      "hvem er du"
-    ],
-    "answer": [
-      "Jeg hedder Huy. Hvad vil du ellers vide om?"
-    ]
+    "keywords": ["navn", "hedder", "hvem er du"],
+    "answer": "Jeg hedder Huy. Hvad vil du ellers vide om mig?"
   },
   {
     "category": "bosted",
-    "keywords": [
-      "bor",
-      "by",
-      "fra"
-    ],
-    "answer": [
-      "Jeg bor i Aarhus"
-    ]
+    "keywords": ["bor", "by", "fra"],
+    "answer": "Jeg bor i Aarhus."
   },
   {
     "category": "hobby",
-    "keywords": [
-      "fritid",
-      "hobby",
-      "kan lide"
-    ],
-    "answer": [
-      "I min fritid kan jeg godt lide at læse og gå ture"
-    ]
+    "keywords": ["fritid", "hobby", "kan lide"],
+    "answer": "I min fritid kan jeg godt lide at læse og gå ture."
+  },
+  {
+    "category": "alder",
+    "keywords": ["gammel", "alder", "fødselsdag"],
+    "answer": "Jeg er 30 år."
+  },
+  {
+    "category": "uddannelse",
+    "keywords": ["uddannelse", "studerer", "studie", "skole", "erhvervsakademi"],
+    "answer": "Jeg læser webudvikling på Aarhus Erhvervsakademi."
+  },
+  {
+    "category": "fremtid",
+    "keywords": ["fremtid", "drøm", "drømmejob", "karriere", "efter uddannelsen"],
+    "answer": "Når jeg er færdig, vil jeg gerne have et job, hvor kode er det primære. Jeg har ikke noget imod lidt design ind imellem, men det er udviklingen, der tænder mig."
+  },
+  {
+    "category": "job",
+    "keywords": ["job", "arbejde", "arbejder", "chauffør"],
+    "answer": "Jeg har ikke noget job lige nu, men jeg har tidligere kørt som chauffør for Just Eat."
   },
   {
     "category": "mad",
-    "keywords": [
-      "mad",
-      "spise",
-      "livret"
-    ],
-    "answer": "Min livret er lasagne."
+    "keywords": ["mad", "spise", "livret", "yndlingsmad", "pizza"],
+    "answer": "Pizza! Det er svært at gå galt med en god pizza."
+  },
+  {
+    "category": "spil",
+    "keywords": ["spil", "spiller", "gaming", "gamer", "path of exile", "apex"],
+    "answer": "Jeg spiller Path of Exile og Apex Legends. Det er to meget forskellige spil, men begge er svære at lægge fra sig."
+  },
+  {
+    "category": "anime",
+    "keywords": ["anime", "serie", "serier", "film", "odd taxi"],
+    "answer": "Jeg ser en del anime. En af mine favoritter er Odd Taxi."
+  },
+  {
+    "category": "programmering",
+    "keywords": ["programmering", "kode", "framework", "sprog", "vue", "nuxt", "react", "typescript"],
+    "answer": "Jeg er stærkest i Vue og Nuxt, men jeg vil gerne lære React og blive bedre til TypeScript."
+  },
+    {
+    "category": "hilsen",
+    "keywords": ["hej", "hello", "hey", "halløj", "godmorgen", "goddag", "god aften"],
+    "answer": "Hej! Jeg er Huys AMAbot. Spørg mig om hvad som helst, fx hvad jeg studerer, hvad jeg spiller, eller hvad min livret er."
+  },
+  {
+    "category": "trivsel",
+    "keywords": ["hvordan går det", "hvordan har du det", "hvad så", "går det godt"],
+    "answer": "Det går fint, tak! Jeg sidder bare og venter på dit næste spørgsmål."
+  },
+  {
+    "category": "tak",
+    "keywords": ["tak", "tusind tak", "thanks", "thank you"],
+    "answer": "Selv tak! Er der mere, du vil vide?"
+  },
+  {
+    "category": "farvel",
+    "keywords": ["farvel", "vi ses", "bye", "hav en god dag", "godnat"],
+    "answer": "Farvel og tak for snakken! Kig forbi igen."
+  },
+    {
+    "category": "hjælp",
+    "keywords": ["hjælp", "help", "hvad kan du", "hvad kan jeg spørge", "hvad ved du", "muligheder"],
+    "answer": "Du kan spørge mig om mit navn, min alder, hvor jeg bor, hvad jeg studerer, mit tidligere job, mine fremtidsplaner, min livret, hvilke spil jeg spiller, hvilken anime jeg ser, og hvilke frameworks jeg koder i. Prøv fx: \"Hvad er din livret?\""
+  },
+  {
+    "category": "bekræftelse",
+    "keywords": ["okay", "fedt", "cool", "nice", "super"],
+    "answer": "Fedt! Er der andet, du gerne vil vide?"
+  },
+    {
+    "category": "hvordan",
+    "keywords": ["hvordan virker du", "hvordan fungerer du", "hvad er du"],
+    "answer": "Jeg leder efter nøgleord i dit spørgsmål og vælger det svar, der matcher flest af dem. Skriv \"hjælp\" for at se, hvad du kan spørge om."
+  },
+  {
+    "category": "skaber",
+    "keywords": ["hvem har lavet dig", "hvem har bygget dig", "hvem lavede dig", "skaber"],
+    "answer": "Huy har bygget mig som en del af sin uddannelse i webudvikling."
   }
 ]

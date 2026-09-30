@@ -70,12 +70,17 @@ input {
   border-radius: 6px;
 }
 button {
-  position: absolute;
-  right: 0;
-  top: 50%;
-  transform: translate(-50%, -50%);
   aspect-ratio: 1/1;
   border: 1px solid black;
   padding: 4px;
   border-radius: 100%;
+}
+.submitButton {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+#clearMessagesButton{
+  position: absolute;
 }

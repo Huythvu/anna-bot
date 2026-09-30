@@ -4,39 +4,31 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Anna Bot</title>
-    <link rel="stylesheet" href="/assets/styles/style.css">
+    <link rel="stylesheet" href="/client/styles/style.css" />
     <script src="/assets/scripts/counter.js"></script>
+    <script src="/client/app.js" defer></script>
   </head>
   <body>
     <main>
       <section>
         <h1>What would you like to know about me? 🦥</h1>
-        <% for (const message of messages) { %>
-          <article class="<%= message.type%>">
-            <p><%= message.text %></p>
-          </article>
-          <% } %>
-        <% if (error) { %>
-          <p role ="alert"><%= error %></p>
-        <% } %>
+
+        <div id="messages"></div>
+
         <div class="formContainer">
-        <form method="POST" action="/ask">
-          <label for="question">Your question here:</label>
-          <div class="inputContainer">
-            <input
-              type="text"
-              id="question"
-              name="question"
-              placeholder="Ask me anything right here"
-            />
-            <button type="submit">Send</button>
-          </div>
-        </form>
-        <ul>
-          <li>Navn: <%= topicStats.navn %></li>
-          <li>Bosted: <%= topicStats.bosted %></li>
-          <li>Hobby: <%= topicStats.hobby %></li>
-        </ul>          
+          <form id="questionForm">
+            <label for="question">Your question here:</label>
+            <div class="inputContainer">
+              <input
+                type="text"
+                id="question"
+                name="question"
+                placeholder="Ask me anything right here"
+              />
+              <button type="submit" class="submitButton">Send</button>
+              <button type="button" id="clearMessagesButton">Ryd Message</button>
+            </div>
+          </form>
         </div>
       </section>
     </main>
